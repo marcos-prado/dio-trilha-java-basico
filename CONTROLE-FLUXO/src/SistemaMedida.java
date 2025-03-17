@@ -2,7 +2,7 @@
 public class SistemaMedida {
 
     public static void main(String[] args) {
-        String sigla = "g";
+        String sigla = "G";
 
         switch (sigla) {
             case "P" -> System.out.print("Pequeno");
