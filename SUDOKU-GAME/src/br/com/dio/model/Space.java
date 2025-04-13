@@ -1,46 +1,38 @@
 package br.com.dio.model;
 
 public class Space {
-    private int x;
-    private int y;
-    private boolean isOccupied = false;
-    private boolean isShip = false;
-    private boolean isHit = false;
 
-    public Space(int x, int y) {
-        this.x = x;
-        this.y = y;
+    private Integer actual;
+    private final int expected;
+    private final boolean fixed;
+
+
+    public Space(final int expected, final boolean fixed) {
+        this.expected = expected;
+        this.fixed = fixed;
+        if (fixed){
+            actual = expected;
+        }
     }
 
-    public int getX() {
-        return x;
+    public Integer getActual() {
+        return actual;
     }
 
-    public int getY() {
-        return y;
+    public void setActual(final Integer actual) {
+        if (fixed) return;
+        this.actual = actual;
     }
 
-    public boolean isOccupied() {
-        return isOccupied;
+    public void clearSpace(){
+        setActual(null);
     }
 
-    public void setOccupied(boolean occupied) {
-        isOccupied = occupied;
+    public int getExpected() {
+        return expected;
     }
 
-    public boolean isShip() {
-        return isShip;
-    }
-
-    public void setShip(boolean ship) {
-        isShip = ship;
-    }
-
-    public boolean isHit() {
-        return isHit;
-    }
-
-    public void setHit(boolean hit) {
-        isHit = hit;
+    public boolean isFixed() {
+        return fixed;
     }
 }
