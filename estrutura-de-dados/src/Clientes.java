@@ -17,11 +17,12 @@ public class Clientes {
             if (!conta.sacar(valorSaque)) {
                 System.out.println("Saque invalido: Saldo insuficiente");
                 System.out.println("Saldo Atual: " + String.format("%.2f", conta.consultarSaldo()));
-                return;
+
             }
         }
+        if (sc.hasNextDouble())
 
-        if (sc.hasNextDouble()) {
+        {
             double valorDeposito = sc.nextDouble();
             conta.depositar(valorDeposito);
         }
