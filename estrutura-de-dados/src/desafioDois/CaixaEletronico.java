@@ -14,21 +14,17 @@ public class CaixaEletronico {
 
         Conta conta;
 
-        // TODO: Implemente a lógica para criar uma instância de ContaCorrente ou
-        // ContaPoupanca:
-        // Dica: Use um if para verificar o tipo da conta.
-
         if (tipoConta.equalsIgnoreCase("corrente")) {
             double limite = scanner.nextDouble();
-            // TODO: Para Conta Corrente, leia também o limite de cheque especial e crie a
+            // Para Conta Corrente, leia também o limite de cheque especial e crie a
             // instância.
             conta = new ContaCorrente(saldoInicial, limite);
         } else {
-
-            // TODO: Para Conta Poupança, apenas inicialize a conta com o saldo inicial:
             conta = new ContaPoupanca(saldoInicial);
+
         }
 
+        // Processar saques enquanto houver entrada no scanner
         while (scanner.hasNextDouble()) {
             double valorSaque = scanner.nextDouble();
             conta.sacar(valorSaque);

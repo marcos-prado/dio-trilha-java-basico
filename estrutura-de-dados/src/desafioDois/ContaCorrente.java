@@ -10,10 +10,8 @@ public class ContaCorrente extends Conta{
 
     @Override
     public void sacar(double valor) {
-        //TODO: Implemente a lógica para verificar se o saque é permitido considerando o saldo e o limite:
-        //Dica: Se saldo - valor >= -limite, o saque é permitido.
-        
-        if (saldo - valor >= -limite) {
+                
+        if (saldo - valor >= limite) {
             saldo -= valor;
             System.out.println("Saque realizado com sucesso!");
         } else {
@@ -22,5 +20,14 @@ public class ContaCorrente extends Conta{
        
         exibirSaldo(); // Exibe o saldo atualizado
     }
+    public void depositar(double valor) {
+        saldo += valor;
+        System.out.println("Deposito realizado:");
+
+        exibirSaldo(); // Exibe o saldo atualizado
+    }
+    public double getLimite() {
+        return limite;
+    }   
 }
 
