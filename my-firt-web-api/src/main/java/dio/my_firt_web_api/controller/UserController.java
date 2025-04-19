@@ -19,15 +19,15 @@ public class UserController {
     @Autowired
     private UserRepository repository;
 
-    @PostMapping("/usuarios")
+    @PostMapping("/usuario")
     public void post(@RequestBody Usuario usuario){
         repository.save(usuario);
     }
-    @PutMapping("/usuarios")
+    @PutMapping("/usuario")
     public void put(@RequestBody Usuario usuario){
         repository.update(usuario);
     }
-    @GetMapping("/usuarios")
+    @GetMapping("/usuario")
     public List<Usuario> getAll(){
         return repository.listAll();
     }
@@ -35,7 +35,7 @@ public class UserController {
     public Usuario getOne(@PathVariable("id") Integer id){
         return repository.finById(id);
     }
-    @DeleteMapping("/usuarios/{id}")
+    @DeleteMapping("/usuario/{id}")
     public void delete(@PathVariable("id") Integer id){
         repository.remove(id);
     }
